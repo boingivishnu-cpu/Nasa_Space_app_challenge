@@ -1,0 +1,45 @@
+{
+  "id": "jezero",
+  "name": "Jezero Crater",
+  "description": "Perseverance landing area; compact planning site for a Marswalk.",
+  "center": {
+    "latitude": 18.4447,
+    "longitude": 77.4508
+  },
+  "bounds": {
+    "south": 18.2747,
+    "west": 77.2708,
+    "north": 18.6147,
+    "east": 77.6308
+  },
+  "zoom": {
+    "initial": 10,
+    "minimum": 1,
+    "maximum": 12
+  },
+  "terrain": {
+    "source": "MGS MOLA MEGDR topography, 128 pixels per degree",
+    "productId": "MEGT44N000HB",
+    "productUrl": "https://pds-geosciences.wustl.edu/mgs/urn-nasa-pds-mgs_mola_topography_derived/meg128/megt44n000hb.img",
+    "labelUrl": "https://pds-geosciences.wustl.edu/mgs/urn-nasa-pds-mgs_mola_topography_derived/meg128/megt44n000hb.lbl",
+    "headerUrl": "https://pds-geosciences.wustl.edu/mgs/urn-nasa-pds-mgs_mola_topography_derived/meg128/megt44n000hb.hdr",
+    "pixelsPerDegree": 128,
+    "marsRadiusMeters": 3396000,
+    "sampleBounds": {
+      "south": 0,
+      "west": 0,
+      "north": 44,
+      "east": 90
+    },
+    "samples": 11520,
+    "lines": 5632,
+    "bytesPerSample": 2,
+    "byteOrder": "big",
+    "sampleType": "signed_integer",
+    "unit": "meters",
+    "productStatus": "Verified PDS3 label and PDS4 product label; MOLA interpolates bins without observations."
+  },
+  "units": "degrees",
+  "coordinateSystem": "planetocentric",
+  "dataStatus": "MOLA numeric topography from PDS MEGT44N000HB is configured; Mars Trek MOLA relief tiles verified through native zoom 7."
+}
