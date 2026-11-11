@@ -133,9 +133,6 @@ export default function SpaceBackdrop() {
       <div className="space-nebula" />
       <div className="space-orbit space-orbit-one" />
       <div className="space-orbit space-orbit-two" />
-      <div className="space-mars">
-        <div className="space-mars-surface" />
-      </div>
     </div>
   );
 }

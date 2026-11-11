@@ -31,6 +31,14 @@ app.include_router(terrain_router)
 app.include_router(ai_router)
 
 
+@app.middleware("http")
+async def strip_api_prefix(request: Request, call_next):
+    path = request.scope["path"]
+    if path.startswith("/api/"):
+        request.scope["path"] = path[4:]
+    return await call_next(request)
+
+
 @app.exception_handler(TerrainDataUnavailable)
 async def terrain_data_unavailable(
     request: Request, error: TerrainDataUnavailable

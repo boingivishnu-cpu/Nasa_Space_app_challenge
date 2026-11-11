@@ -8,3 +8,4 @@ backend/.pytest_cache/
 .venv/
 *.py[cod]
 .DS_Store
+.vercel

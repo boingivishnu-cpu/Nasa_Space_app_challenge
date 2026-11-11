@@ -54,7 +54,9 @@ interface GeminiStatus {
 
 type ProviderState = "checking" | "ready" | "setup_required" | "offline";
 
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL ?? "http://localhost:8000";
+const API_BASE_URL =
+  import.meta.env.VITE_API_BASE_URL ??
+  (import.meta.env.PROD ? "/api" : "http://localhost:8000");
 const ROUTE_LABELS: Record<AssistantRouteMode, string> = {
   shortest: "shortest",
   safest: "safest",

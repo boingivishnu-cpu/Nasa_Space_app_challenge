@@ -1,0 +1,37 @@
+{
+  "services": {
+    "frontend": {
+      "root": "frontend/"
+    },
+    "backend": {
+      "root": ".",
+      "entrypoint": "backend.app.main:app"
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": {
+        "service": "backend"
+      }
+    },
+    {
+      "source": "/(.*)",
+      "destination": {
+        "service": "frontend"
+      }
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/favicon.ico",
+      "destination": "/favicon.svg",
+      "permanent": true
+    },
+    {
+      "source": "/favicon.png",
+      "destination": "/favicon.svg",
+      "permanent": true
+    }
+  ]
+}

@@ -166,7 +166,9 @@ const ROUTE_COLORS: Record<RouteMode, string> = {
 const TILE_URL =
   import.meta.env.VITE_MARS_TILES_URL ??
   "https://trek.nasa.gov/tiles/Mars/EQ/Mars_MGS_MOLA_ClrShade_merge_global_463m/1.0.0/default/default028mm/{z}/{y}/{x}.jpg";
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL ?? "http://localhost:8000";
+const API_BASE_URL =
+  import.meta.env.VITE_API_BASE_URL ??
+  (import.meta.env.PROD ? "/api" : "http://localhost:8000");
 
 const marsCrs = L.Util.extend({}, L.CRS.Simple, {
   transformation: new L.Transformation(256 / 180, 256, -256 / 180, 128),

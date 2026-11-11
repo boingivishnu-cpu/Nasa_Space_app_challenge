@@ -197,3 +197,14 @@ app actions. Gemini responses can be inaccurate and are not navigation,
 operational, or safety advice. The endpoint, frontend integration, and mocked
 provider behavior are tested locally; a live Gemini response requires a valid
 user-supplied API key and network access.
+
+## Deploy to Vercel
+
+Import this repository into Vercel. The root `vercel.json` configures the Vite
+frontend and FastAPI backend as separate services on one deployment; frontend
+API calls use `/api` and are routed to FastAPI. No `VITE_API_BASE_URL` setting
+is needed for production.
+
+To enable the optional Gemini assistant, add `MARSWAY_GEMINI_API_KEY` as a
+server-side environment variable in Vercel's project settings. Do not define it
+with a `VITE_` prefix. The assistant remains unavailable if this key is omitted.

@@ -21,7 +21,9 @@ import MarsMap from "./MapView";
 import SpaceBackdrop from "./SpaceBackdrop";
 
 type ApiLinkState = "checking" | "connected" | "disconnected";
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL ?? "http://localhost:8000";
+const API_BASE_URL =
+  import.meta.env.VITE_API_BASE_URL ??
+  (import.meta.env.PROD ? "/api" : "http://localhost:8000");
 
 const APP_NAVIGATION = [
   { label: "Explore", href: "#explore", icon: Home },
@@ -203,14 +205,20 @@ function App() {
             <small>JEZERO CRATER · PERSEVERANCE LANDING AREA</small>
           </div>
         </div>
-        <div className="hero-visual" aria-hidden="true">
-          <div className="hero-planet-ring hero-planet-ring-back" />
-          <div className="hero-planet">
-            <div className="hero-planet-texture" />
-            <div className="hero-planet-glint" />
-          </div>
-          <div className="hero-planet-ring hero-planet-ring-front" />
-          <span className="hero-orbit-label">MARS · 01</span>
+        <div className="hero-visual">
+          <img
+            className="hero-photo"
+            src="/images/jezero-hazcam-pia24482.jpg"
+            alt="Perseverance Hazcam photograph of rocky terrain in Jezero Crater during the rover's first drive."
+          />
+          <a
+            className="hero-photo-credit"
+            href="https://photojournal.jpl.nasa.gov/catalog/PIA24482"
+            target="_blank"
+            rel="noreferrer"
+          >
+            NASA/JPL · PIA24482 ↗
+          </a>
           <span className="hero-coordinate-label">18.4° N / 77.5° E</span>
         </div>
       </section>
